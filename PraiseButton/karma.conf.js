@@ -14,12 +14,13 @@ module.exports = function(config) {
 
 
     // list of files / patterns to load in the browser
-    files: [
+    files: ['./scripts/add.js','index.spec.js'
     ],
 
 
     // list of files / patterns to exclude
     exclude: [
+      'karma.conf.js'
     ],
 
 
