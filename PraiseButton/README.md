@@ -23,7 +23,7 @@
 
 ### babel编译命令行
 - babel **src_file** -o **output_file**
-- 可以把命令写到package.json的scripts命令中
+- 可以把命令写到package.json的scripts命令中，使用npm run build启动
 
 ```js
 "scripts": {
@@ -116,7 +116,7 @@ describe("A suite is just a function", function() {
 
 #### karma测试命令
 - karma start  /  karma start xxxx.js(karma配置文件)
-- 可以把命令写到package.json的scripts命令中
+- 可以把命令写到package.json的scripts命令中，使用npm run unit启动
 
 ```js
 "scripts": {
@@ -195,7 +195,7 @@ const { Builder, By, Key, until } = require('selenium-webdriver');
 
 ### e2e测试命令
 - node ./e2e/phraiseE2E.js
-- 可以把命令写到package.json的scripts命令中
+- 可以把命令写到package.json的scripts命令中，使用npm run e2e启动
 
 ```js
 "scripts": {
