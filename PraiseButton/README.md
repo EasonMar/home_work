@@ -1,6 +1,3 @@
-[TOC]
-
----------------------------------------------
 ## 使用ES6完成点赞+1功能的父类PraiseButton
 - 自己对OOP设计思路不熟,而且想太多了,应该以"先完成，后优化作为指导思想"
 
@@ -40,7 +37,7 @@
 ## 使用System.js加载对应编译后的文件
 
 ### 什么是 [System.js](https://github.com/systemjs/systemjs/tree/501d1a0b9e32e00d54c9cd747e3236a9df88a1a3)
-- System.js是万能模块加载器，==须在服务器环境下才能生效==
+- System.js是万能模块加载器，**须在服务器环境下才能生效**
 
 ### 引入System.js
 - 可以直接到 [bootstrapCDN](http://www.bootcdn.cn/) 引入资源
@@ -171,7 +168,7 @@ coverageReporter: {
 ### 编写selenium测试脚本
 - 就是一个运行在node环境下的文件
 - [参考学长的代码](https://github.com/pengxiaohua/praise/blob/master/e2e.js)
-- ==注意，旧版本的node可能不支持async await方法，需要将node更新为最新版本！否则可能运行不成功。==
+- **注意，旧版本的node可能不支持async await方法，需要将node更新为最新版本！否则可能运行不成功。**
 - [selenium API 参考](http://seleniumhq.github.io/selenium/docs/api/javascript/index.html)
 
 ```js
