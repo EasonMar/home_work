@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel ./scripts/index.es6 -o ./scripts/index.js && babel ./scripts/thumb.es6 -o ./scripts/thumb.js",
-    "unit": "karma start"
+    "unit": "karma start",
+    "e2e": "node ./e2e/phraiseE2E.js"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +20,7 @@
     "karma-coverage": "^1.1.2",
     "karma-jasmine": "^1.1.2",
     "karma-phantomjs-launcher": "^1.0.4",
-    "phantomjs": "^2.1.7+deprecated"
+    "phantomjs": "^2.1.7+deprecated",
+    "selenium-webdriver": "^4.0.0-alpha.1"
   }
 }
