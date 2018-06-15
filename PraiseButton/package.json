@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel ./scripts/index.es6 -o ./scripts/index.js && babel ./scripts/thumb.es6 -o ./scripts/thumb.js"
+    "build": "babel ./scripts/index.es6 -o ./scripts/index.js && babel ./scripts/thumb.es6 -o ./scripts/thumb.js",
+    "unit": "karma start"
   },
   "keywords": [],
   "author": "",
