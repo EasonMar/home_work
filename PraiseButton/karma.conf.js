@@ -26,14 +26,21 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      // 对哪些文件生成代码测试覆盖率检查 - 原则：测试代码要≥业务代码
+      'scripts/*.js': ['coverage']
     },
 
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['progress', 'coverage'],
 
+    // optionally, configure the reporter - 配置生成的报告-html
+    coverageReporter: {
+      type : 'html',
+      dir : './docs/coverage/'
+    },
 
     // web server port
     port: 9876,
