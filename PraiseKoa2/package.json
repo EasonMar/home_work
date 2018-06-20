@@ -1,0 +1,19 @@
+{
+  "name": "PraiseKoa2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.5.1",
+    "koa-route": "^3.2.0",
+    "koa-static": "^5.0.0",
+    "koa-views": "^6.1.4",
+    "request": "^2.87.0"
+  }
+}
