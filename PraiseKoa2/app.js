@@ -17,15 +17,17 @@ app.use(Static(__dirname + '/public'));
 const main = async ctx => await ctx.render('index');
 const index = async ctx => await ctx.render('praise');
 const getphp = async (ctx, next) => {
-    let url = 'http://127.0.0.1/JCYD_2pro_PHP/index.php';
-    let data = { action: 'select' }
+    // let url = 'http://127.0.0.1/JCYD_2pro_PHP/index.php';
+    let url = 'http://127.0.0.1/JCYD_PHP/index.php';
+    let data = 'action=select'; // $_POST、$_GET只识别"key=value"字符串形式的参数
+    // let data = {action:'select'}; // 如果要传json参数，PHP后端需要配合调整
     // let data = ctx.Request
 
     // 注意，这里有一个异步操作！！需要不能用同步回调的方式写！！
     // 估计axios要配置formData形式的上传,PHP才能收到
     ctx.body = await axios.post(url, data)
         .then(function (response) {
-            console.log(response);
+            console.log(response.data);
             return response.data;
         })
         .catch(function (error) {
