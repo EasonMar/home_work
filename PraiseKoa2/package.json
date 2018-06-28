@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel ./public/javascripts/index.es6 -o ./public/javascripts/index.js && babel ./public/javascripts/thumb.es6 -o ./public/javascripts/thumb.js"
   },
   "keywords": [],
   "author": "",
@@ -15,5 +16,9 @@
     "koa-route": "^3.2.0",
     "koa-static": "^5.0.0",
     "koa-views": "^6.1.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
   }
 }

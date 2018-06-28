@@ -31,16 +31,39 @@ var PraiseButton = function () {
 
                 if (_this.num < 10) {
                     $('#animation').addClass('num');
-                    _this.num = add(_this.num);
+
                     setTimeout(function () {
                         $('#animation').removeClass('num');
                     }, 300);
+                    var now = add(_this.num);
+                    axios.get('/php?action=update&num=' + now).then(function (response) {
+                        if (response.data.error == 0) {
+                            _this.num = now;
+                            console.log('点赞成功~!');
+                        } else {
+                            alert('点赞失败');
+                        }
+                    }).catch(function (error) {
+                        alert('服务访问失败');
+                        console.log(error);
+                    });
                 } else {
                     _this.element.css({ 'background': 'url(/images/thumb10.jpg) no-repeat', 'backgroundSize': 'contain', 'width': '428px' });
                     _this.element.addClass('stop');
-                    _this.num = 0;
+                    axios.get('/php?action=update&num=0').then(function (response) {
+                        if (response.data.error == 0) {
+                            _this.num = 0;
+                            console.log('点赞成功~!');
+                            console.log(response.data);
+                        } else {
+                            alert('点赞失败');
+                        }
+                    }).catch(function (error) {
+                        alert('服务访问失败');
+                        console.log(error);
+                    });
                 }
-                console.log(_this.num);
+                console.log('\u73B0\u5728\u70B9\u8D5E\u6570\u4E3A:' + _this.num);
             });
         }
     }]);
