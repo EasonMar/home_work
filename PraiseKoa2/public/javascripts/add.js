@@ -15,6 +15,7 @@ SystemJS.import('thumb.js').then(function (m) {
         .then(response => {
             if (response.data.error == 0) {
                 callBack(response.data.num);
+                $('.now_count').text(response.data.num);
                 console.log(`初始化数据：${response.data.num}`);
             } else {
                 alert('创建数据失败')

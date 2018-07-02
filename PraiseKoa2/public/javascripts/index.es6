@@ -23,6 +23,7 @@ class PraiseButton {
                     .then(response => {                      
                         if (response.data.error == 0) {
                             this.num = now;
+                            $('.now_count').text(this.num);
                             console.log('点赞成功~!')
                         } else {
                             alert('点赞失败')
@@ -35,6 +36,7 @@ class PraiseButton {
             } else {
                 this.element.css({ 'background': 'url(/images/thumb10.jpg) no-repeat', 'backgroundSize': 'contain', 'width': '428px' });
                 this.element.addClass('stop');
+                $('.now_count').text('');
                 axios.get(`/php?action=update&num=0`)
                     .then(response => {                      
                         if (response.data.error == 0) {

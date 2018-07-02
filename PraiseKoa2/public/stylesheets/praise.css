@@ -13,6 +13,15 @@
 
 .hand:active {top: 42%;}
 
+.now_count{
+    position: absolute;
+    top: 0;
+    left: 40%;
+    font-size: 40px;
+    font-weight: bold;
+    color: #1a1aeb;
+}
+
 .num {
     display: block !important;
     font-size: 80px;
