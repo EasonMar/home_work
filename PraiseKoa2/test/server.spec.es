@@ -12,7 +12,7 @@ describe('node接口测试', function () {
             .expect(200)
             .end(function (err, res) {
                 console.log('res输出：')
-                console.log(res.data);
+                console.log(res.text);
                 // if (res.msg == "success") {
                 //     done();
                 // } else {
