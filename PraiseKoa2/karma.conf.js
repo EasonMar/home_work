@@ -14,7 +14,7 @@ module.exports = function(config) {
 
 
     // list of files / patterns to load in the browser
-    files: ['/javascripts/add.js','index.spec.js'
+    files: ['./public/javascripts/karma_add.js','./index.spec.js'
     ],
 
 

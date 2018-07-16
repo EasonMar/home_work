@@ -1,11 +1,12 @@
 {
-  "name": "PraiseKoa2",
+  "name": "praisekoa2",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel ./public/javascripts/index.es6 -o ./public/javascripts/index.js && babel ./public/javascripts/thumb.es6 -o ./public/javascripts/thumb.js",
+    "buildDir": "babel ./public/javascripts -w -d ./public/build",
     "unit": "karma start"
   },
   "keywords": [],

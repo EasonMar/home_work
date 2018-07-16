@@ -1,5 +1,6 @@
 describe("基础单元测试", function () {
-    it("测试点赞加一", function () {
+    it("测试点赞加一", function (done) {
         expect(window.add(1)).toBe(2);
+        done();
     })
 })
