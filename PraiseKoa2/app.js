@@ -4,6 +4,7 @@ const Route = require('koa-route');
 const Static = require('koa-static');
 const views = require('koa-views');
 const app = new Koa();
+import 'babel-polyfill';
 
 // Must be used before any router is used
 // 设置模板路径和扩展名
@@ -63,3 +64,5 @@ app.use(handler);
 app.use(InternalErr);
 
 app.listen(3000);
+
+export default app;
