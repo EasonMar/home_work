@@ -8,13 +8,15 @@
     "build": "babel ./public/javascripts/index.es6 -o ./public/javascripts/index.js && babel ./public/javascripts/thumb.es6 -o ./public/javascripts/thumb.js",
     "buildDir": "babel ./public/javascripts -w -d ./public/build",
     "unit": "karma start",
-    "service": "mocha ./mochaRunner.js"
+    "service": "mocha ./mochaRunner.js",
+    "e2e": "node ./test/e2e.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
     "koa": "^2.5.1",
     "koa-route": "^3.2.0",
     "koa-static": "^5.0.0",
@@ -22,7 +24,6 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "jasmine-core": "^3.1.0",
     "karma": "^2.0.4",
