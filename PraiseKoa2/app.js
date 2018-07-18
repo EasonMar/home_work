@@ -20,8 +20,7 @@ const index = async ctx => await ctx.render('praise');
 
 // 封装php点赞接口
 const getphp = async ctx => {
-    // let url = 'http://127.0.0.1/JCYD_2pro_PHP/index.php';
-    let url = 'http://127.0.0.1/JCYD_PHP/index.php';
+    let url = 'http://127.0.0.1/JCYD_PHP/HomeWork/work2/index.php';
     // let data = 'action=select'; // $_POST、$_GET只识别"key=value"字符串形式的参数
     // let data = {action:'select'}; // 如果要传json参数，PHP后端需要配合调整
     let data = 'action=' + ctx.request.query.action;
