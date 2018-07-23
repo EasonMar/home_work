@@ -34,6 +34,7 @@
     "mochawesome": "^3.0.2",
     "phantom": "^6.0.3",
     "selenium-webdriver": "^4.0.0-alpha.1",
-    "supertest": "^3.1.0"
+    "supertest": "^3.1.0",
+    "webpack": "^3.8.1"
   }
 }

@@ -57,4 +57,9 @@ class PraiseButton {
     }
 }
 
-export default PraiseButton;
+class Thumb extends PraiseButton{
+    constructor(num,element){
+        super(num,element);
+    }
+}
+export default Thumb
