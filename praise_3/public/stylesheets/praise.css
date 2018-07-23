@@ -1,7 +1,7 @@
 .hand {
     position: relative;
-    top: 40%;
-    left: 50%;
+    top: 250px;
+    left: 250px;
     -webkit-transform: translateX(-50%) translateY(-50%);
     background: url(/images/thumb.jpg) no-repeat;
     background-size: contain;
@@ -11,7 +11,7 @@
     transition: top .2s;
 }
 
-.hand:active {top: 42%;}
+.hand:active {top: 300px;}
 
 .now_count{
     position: absolute;
