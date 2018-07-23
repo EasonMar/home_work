@@ -1,18 +1,17 @@
-const path = require('path');
-const webpack = require('webpack');
+const webpackDev = require('./config/webpack.dev');
+const webpackProd = require('./config/webpack.prod');
 
-module.exports = {
-    entry: {
-        index: [
-            path.join(__dirname, './src/public/javascripts/index.es6'),
-            path.join(__dirname, './src/public/javascripts/add.js')
-        ],
-        tag:[
-            path.join(__dirname, './src/public/javascripts/tag.es6')
-        ]
-    },
-    output: {
-        filename: 'public/javascripts/[name]-[hash:5].js',
-        path: path.join(__dirname, './build')
-    }
-};
+console.log('');
+console.log('process.env.NODE_ENV = ' + process.env.NODE_ENV);
+console.log('');
+
+switch (process.env.NODE_ENV) {
+    case 'dev':
+        module.exports = webpackDev;
+        break;
+    case 'prod':
+        module.exports = webpackProd;
+        break;
+    default:
+        module.exports = webpackDev;
+}

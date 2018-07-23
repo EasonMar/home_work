@@ -7,7 +7,23 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "unit": "karma start",
     "service": "mocha ./mochaRunner.js",
-    "e2e": "node ./test/e2e.js"
+    "e2e": "node ./test/e2e.js",
+    "build:dev": "better-npm-run build:dev",
+    "build:prod": "better-npm-run build:prod"
+  },
+  "betterScripts": {
+    "build:dev": {
+      "command": "webpack --progress --colors",
+      "env": {
+        "NODE_ENV": "dev"
+      }
+    },
+    "build:prod": {
+      "command": "webpack --progress --colors",
+      "env": {
+        "NODE_ENV": "prod"
+      }
+    }
   },
   "keywords": [],
   "author": "",
@@ -23,6 +39,7 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
+    "better-npm-run": "^0.1.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^7.0.1",
     "jasmine-core": "^3.1.0",
@@ -35,6 +52,7 @@
     "phantom": "^6.0.3",
     "selenium-webdriver": "^4.0.0-alpha.1",
     "supertest": "^3.1.0",
-    "webpack": "^3.8.1"
+    "webpack": "^3.8.1",
+    "webpack-livereload-plugin": "^1.2.0"
   }
 }
