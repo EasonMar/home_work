@@ -5,8 +5,6 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel ./public/javascripts/index.es6 -o ./public/javascripts/index.js && babel ./public/javascripts/thumb.es6 -o ./public/javascripts/thumb.js",
-    "buildDir": "babel ./public/javascripts -w -d ./public/build",
     "unit": "karma start",
     "service": "mocha ./mochaRunner.js",
     "e2e": "node ./test/e2e.js"
@@ -25,6 +23,8 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
     "jasmine-core": "^3.1.0",
     "karma": "^2.0.4",
     "karma-coverage": "^1.1.2",
