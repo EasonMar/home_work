@@ -4,13 +4,15 @@ xtag.register('x-praise', {
               </div>
               <span class="hide" id="animation">+1</span>`,
     lifecycle: {
-        created: function () { },
-        inserted: function () { },
-        removed: function () { },
-        attributeChanged: function () { }
+        created: function () { console.log('create')},
+        inserted: function () { console.log('insert')},
+        removed: function () { console.log('remove')},
+        attributeChanged: function () { console.log('attr change')}
     },
     methods: {
-        someMethod: function () { }
+        someMethod: function (evtype) { 
+            console.log(`${evtype} trigger some method`);
+        }
     },
     accessors: {
         someAccessor: {
@@ -21,7 +23,11 @@ xtag.register('x-praise', {
         }
     },
     events: {
-        tap: function () { },
-        focus: function () { }
+        tap: function () { 
+            this.someMethod('tap');
+        },
+        focus: function () { 
+            this.someMethod('focus');
+        }
     }
 });
