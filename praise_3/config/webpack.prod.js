@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const LiveReloadPlugin = require('webpack-livereload-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -23,7 +24,21 @@ module.exports = {
         // 自动刷新浏览器
         new LiveReloadPlugin({ appendScriptTag: true }),
         // 声明Extract
-        new ExtractTextPlugin("public/stylesheets/[name]-[hash:5].css")
+        new ExtractTextPlugin("public/stylesheets/[name]-[hash:5].css"),
+        // 压缩js
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false,
+                drop_console: false,
+            }
+        }),
+        // 压缩css
+        new OptimizeCssAssetsPlugin({
+            assetNameRegExp: /\.css$/g,
+            cssProcessor: require('cssnano'),
+            cssProcessorOptions: { safe: true, discardComments: { removeAll: true } },
+            canPrint: true
+        })
     ],
     module: {
         rules: [
