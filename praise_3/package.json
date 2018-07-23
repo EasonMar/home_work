@@ -1,0 +1,39 @@
+{
+  "name": "praisekoa2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel ./public/javascripts/index.es6 -o ./public/javascripts/index.js && babel ./public/javascripts/thumb.es6 -o ./public/javascripts/thumb.js",
+    "buildDir": "babel ./public/javascripts -w -d ./public/build",
+    "unit": "karma start",
+    "service": "mocha ./mochaRunner.js",
+    "e2e": "node ./test/e2e.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
+    "koa": "^2.5.1",
+    "koa-route": "^3.2.0",
+    "koa-static": "^5.0.0",
+    "koa-views": "^6.1.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "jasmine-core": "^3.1.0",
+    "karma": "^2.0.4",
+    "karma-coverage": "^1.1.2",
+    "karma-jasmine": "^1.1.2",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "mocha": "^5.2.0",
+    "mochawesome": "^3.0.2",
+    "phantom": "^6.0.3",
+    "selenium-webdriver": "^4.0.0-alpha.1",
+    "supertest": "^3.1.0"
+  }
+}
