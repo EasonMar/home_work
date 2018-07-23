@@ -1,3 +1,5 @@
+import "../stylesheets/praise.css";
+
 class PraiseButton {
     constructor(num, element) {
         this.num = num;

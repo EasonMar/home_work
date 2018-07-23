@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const LiveReloadPlugin = require('webpack-livereload-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     entry: {
@@ -20,7 +21,9 @@ module.exports = {
         // 不明白为什么还要配置这货，前面不是已经解决环境变量的问题了吗
         new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"dev"' }),
         // 自动刷新浏览器
-        new LiveReloadPlugin({ appendScriptTag: true })
+        new LiveReloadPlugin({ appendScriptTag: true }),
+        // 声明Extract
+        new ExtractTextPlugin("public/stylesheets/[name]-[hash:5].css")
     ],
     module: {
         rules: [
@@ -33,6 +36,13 @@ module.exports = {
                         presets: ['env']
                     }
                 }
+            },
+            {
+                test: /\.css$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: "css-loader"
+                })
             }
         ]
     }
