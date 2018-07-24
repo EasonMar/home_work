@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const LiveReloadPlugin = require('webpack-livereload-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -28,6 +29,16 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',
             filename: 'public/javascripts/common/vendor-[hash:5].min.js',
+        }),
+        // 将打包出来的文件引入模板内
+        new HtmlWebpackPlugin({
+            filename: './views/praise.html',// 最终生成的html
+            template: 'src/views/praise.html'
+        }),
+        new HtmlWebpackPlugin({
+            filename: './views/index.html',
+            template: 'src/views/index.html',
+            inject: false
         })
     ],
     module: {

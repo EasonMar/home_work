@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="/stylesheets/praise.css">
     <script src="https://cdn.bootcss.com/x-tag/1.5.11/x-tag-core.js"></script>
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-    <!-- <script src="https://cdn.bootcss.com/systemjs/0.21.3/system.js"></script> -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="/javascripts/add.js"></script>
     <script src="/javascripts/tag.js"></script>
@@ -21,37 +20,4 @@
     <x-praise></x-praise>
 
 </body>
-<!-- <script>
-    SystemJS.config({
-        baseURL: '/javascripts'
-    });
-
-    SystemJS.import('thumb.js').then(function (m) {
-        $.extend({
-            thumb: m.default
-        });
-        // 通过请求返回对应的初始化数量
-        axios.get('/php?action=select')
-            .then(response => {
-                if (response.data.error == 0) {
-                    callBack(response.data.num);
-                    $('.now_count').text(response.data.num);
-                    console.log(`初始化数据：${response.data.num}`);
-                } else {
-                    alert('创建数据失败')
-                }
-            })
-            .catch(error => {
-                alert('服务访问失败')
-                console.log(error);
-            });
-
-    });
-
-    function callBack(num) {
-        var f = new $.thumb(num, $('#thumb'));
-        f.clickAction();
-    }
-</script> -->
-
 </html>
