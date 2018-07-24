@@ -23,7 +23,12 @@ module.exports = {
         // 自动刷新浏览器
         new LiveReloadPlugin({ appendScriptTag: true }),
         // 声明Extract
-        new ExtractTextPlugin("public/stylesheets/[name]-[hash:5].css")
+        new ExtractTextPlugin("public/stylesheets/[name]-[hash:5].css"),
+        // 提取公共文件
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+            filename: 'public/javascripts/common/vendor-[hash:5].min.js',
+        })
     ],
     module: {
         rules: [

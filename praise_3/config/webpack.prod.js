@@ -38,7 +38,12 @@ module.exports = {
             cssProcessor: require('cssnano'),
             cssProcessorOptions: { safe: true, discardComments: { removeAll: true } },
             canPrint: true
-        })
+        }),
+        // 提取公共文件
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+            filename: 'public/javascripts/common/vendor-[hash:5].min.js',
+        }),
     ],
     module: {
         rules: [
