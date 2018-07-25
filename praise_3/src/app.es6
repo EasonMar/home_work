@@ -12,6 +12,8 @@ app.use(views(__dirname + '/views', { extension: 'html' }));
 
 // 设置静态资源路径
 // app.use(Static(__dirname + '/public'));
+
+// 由于webpack打包后资源路径变了，这里把静态资源根目录设置为__dirname
 app.use(Static(__dirname));
 
 

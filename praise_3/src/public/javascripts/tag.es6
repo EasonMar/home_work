@@ -48,7 +48,7 @@ xtag.register('x-praise', {
             if (e.target.id = 'thumb') {
                 // 事件稀释
                 if (timer) clearTimeout(timer);
-                timer = setTimeout(() => { this.praise() }, 500);
+                timer = setTimeout(() => { this.praise() }, 300);
             }
         }
     }

@@ -35,12 +35,14 @@ module.exports = {
             filename: './views/praise.html',// 最终生成的html
             template: 'src/views/praise.js',
             inject: false,
-            chunks: ['vendor', 'index', 'tag']
+            chunks: ['vendor', 'index', 'tag'],
+            favicon: 'src/public/favicon.ico'
         }),
         new HtmlWebpackPlugin({
             filename: './views/index.html',
             template: 'src/views/index.html',
-            inject: false
+            inject: false,
+            favicon: 'src/public/favicon.ico'
         })
     ],
     module: {
@@ -61,6 +63,19 @@ module.exports = {
                     fallback: "style-loader",
                     use: "css-loader"
                 })
+            },
+            {
+                test: /\.(png|jpg|gif)/,
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name]-[hash:5].[ext]',
+                        outputPath: 'public/images/',
+                        // publicPath: '127.0.0.1:3000/public/images/' // 路径不完整，失败
+                        // publicPath: '../images/'
+                        publicPath: 'http://127.0.0.1:3000/public/images/'
+                    }
+                }
             }
         ]
     }
