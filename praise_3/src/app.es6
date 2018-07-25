@@ -11,7 +11,8 @@ import 'babel-polyfill';
 app.use(views(__dirname + '/views', { extension: 'html' }));
 
 // 设置静态资源路径
-app.use(Static(__dirname + '/public'));
+// app.use(Static(__dirname + '/public'));
+app.use(Static(__dirname));
 
 
 // 设置路由
